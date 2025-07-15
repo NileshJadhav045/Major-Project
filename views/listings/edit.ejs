@@ -3,7 +3,7 @@
 <div class="row mt-2">
   <div class="col-8 offset-2">
     <h3>Edit your Listing</h3>
-    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
@@ -12,6 +12,7 @@
           value="<%= listing.title %>"
           placeholder="Enter title"
           class="form-control"
+          required
         />
       </div>
 
@@ -21,9 +22,11 @@
           name="listing[description]"
           placeholder="Enter description"
           class="form-control"
+          required
         >
 <%= listing.description %></textarea
         >
+        <div class="invalid-feedback">Please enter a short description</div>
       </div>
 
       <div class="mb-3">
@@ -34,7 +37,9 @@
           value="<%= listing.image.url %>"
           placeholder="Enter link"
           class="form-control"
+          required
         />
+        <div class="invalid-feedback">Please enter a valid URL for image</div>
       </div>
 
       <div class="row">
@@ -46,7 +51,9 @@
             value="<%= listing.price %>"
             placeholder="Enter price"
             class="form-control"
+            required
           />
+          <div class="invalid-feedback">Please enter a valid price</div>
         </div>
 
         <div class="mb-3 col-md-8">
@@ -57,7 +64,9 @@
             value="<%= listing.country %>"
             placeholder="Enter country"
             class="form-control"
+            required
           />
+          <div class="invalid-feedback">Please enter a country</div>
         </div>
       </div>
 
@@ -69,7 +78,9 @@
           value="<%= listing.location %>"
           placeholder="Enter location"
           class="form-control"
+          required
         />
+        <div class="invalid-feedback">Please enter a location</div>
       </div>
 
       <button class="btn btn-dark edit-btn mt-3">Edit</button>
@@ -77,3 +88,4 @@
     </form>
   </div>
 </div>
+

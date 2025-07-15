@@ -1,18 +1,20 @@
 {
   "name": "majorproject",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Wanderlust - Travel listings full-stack project",
+  "main": "App.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node App.js",
+    "dev": "nodemon App.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nilesh Jadhav",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
-    "express": "^5.1.0",
+    "express": "4.18.2",
+    "joi": "^17.13.3",
     "method-override": "^3.0.0",
     "mongoose": "^8.16.2"
   }
